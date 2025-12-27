@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriSmart - Agriculture Intelligente</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Agri<span>Smart</span></a>
+            <ul class="nav-menu">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#apropos">À propos</a></li>
+                <li><a href="#fonctionnalites">Fonctionnalités</a></li>
+                <li><a href="#encadreur">Encadreur</a></li>
+                <li><a href="#equipe">Équipe</a></li>
+                <li><a href="#remerciements">Remerciements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Section Accueil -->
+    <section id="accueil" class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">AgriSmart – Agriculture Intelligente</h1>
+                <p class="hero-subtitle">Optimisez votre agriculture avec des technologies intelligentes pour une production durable et efficace</p>
+                <a href="#fonctionnalites" class="btn">Découvrir les fonctionnalités</a>
+            </div>
+            <div class="hero-image">
+                <img src="C:\Users\ALANE WILFRID\Desktop\SMARTAGRI\PROJET1.webp" alt="AgriSmart - Agriculture Intelligente">
+            </div>
+        </div>
+    </section>
+
+    <!-- Section À propos -->
+    <section id="apropos" class="about-section">
+        <div class="container">
+            <h2 class="section-title">À propos du projet</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>AgriSmart est un projet innovant qui vise à moderniser l'agriculture traditionnelle grâce aux technologies intelligentes. Notre système permet aux agriculteurs de surveiller et de gérer leurs cultures à distance, en optimisant l'utilisation des ressources.</p>
+                    <p>En utilisant des capteurs IoT, des données en temps réel et des algorithmes d'analyse, AgriSmart aide à prendre des décisions éclairées pour améliorer le rendement, réduire les coûts et préserver l'environnement.</p>
+                    <p>Notre solution est conçue pour être accessible et facile à utiliser, même pour les agriculteurs ayant peu d'expérience avec les technologies numériques.</p>
+                </div>
+                <div class="about-image">
+                    <img src="C:\Users\ALANE WILFRID\Desktop\SMARTAGRI\projet.jpg" alt="Projet AgriSmart - Agriculture Intelligente">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Fonctionnalités -->
+    <section id="fonctionnalites" class="features-section">
+        <div class="container">
+            <h2 class="section-title">Fonctionnalités principales</h2>
+            <p class="section-subtitle">Découvrez nos solutions interactives pour une agriculture intelligente</p>
+            
+            <div class="features-grid">
+                <!-- Fonctionnalité 1 : Humidité du sol -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3>Humidité du sol</h3>
+                    <p>Surveillez en temps réel l'humidité du sol de vos cultures</p>
+                    <div class="feature-demo">
+                        <div class="moisture-display">
+                            <div class="moisture-label">Humidité actuelle :</div>
+                            <div class="moisture-value" id="moistureValue">65%</div>
+                        </div>
+                        <div class="moisture-bar">
+                            <div class="moisture-fill" id="moistureFill"></div>
+                        </div>
+                        <button class="simulate-btn" id="simulateMoisture">
+                            <i class="fas fa-sync-alt"></i> Simuler une lecture
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Fonctionnalité 2 : Niveau d'eau -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3>Niveau d'eau</h3>
+                    <p>Contrôlez le niveau d'eau dans vos réservoirs d'irrigation</p>
+                    <div class="feature-demo">
+                        <div class="water-level-container">
+                            <div class="water-tank">
+                                <div class="water-tank-inner">
+                                    <div class="water-level" id="waterLevel"></div>
+                                </div>
+                            </div>
+                            <div class="water-level-info">
+                                <div class="level-label">Niveau :</div>
+                                <div class="level-value" id="waterLevelValue">72%</div>
+                            </div>
+                        </div>
+                        <button class="simulate-btn" id="simulateWater">
+                            <i class="fas fa-random"></i> Changer le niveau
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Fonctionnalité 3 : Arrosage automatique -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shower"></i>
+                    </div>
+                    <h3>Arrosage automatique</h3>
+                    <p>Activez ou désactivez l'arrosage automatique de vos cultures</p>
+                    <div class="feature-demo">
+                        <div class="irrigation-status">
+                            <div class="status-label">Statut :</div>
+                            <div class="status-value" id="irrigationStatus">Désactivé</div>
+                        </div>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="irrigationToggle" class="toggle-checkbox">
+                            <label for="irrigationToggle" class="toggle-label">
+                                <span class="toggle-handle"></span>
+                                <span class="toggle-text-on">ON</span>
+                                <span class="toggle-text-off">OFF</span>
+                            </label>
+                        </div>
+                        <div class="irrigation-indicator" id="irrigationIndicator">
+                            <i class="fas fa-times-circle"></i> Système arrêté
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fonctionnalité 4 : Contrôle d'éclairage -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Contrôle d'éclairage</h3>
+                    <p>Gérez l'éclairage de vos serres pour optimiser la croissance</p>
+                    <div class="feature-demo">
+                        <div class="light-control">
+                            <div class="light-status">
+                                <div class="status-label">Éclairage :</div>
+                                <div class="status-value" id="lightStatus">Éteint</div>
+                            </div>
+                            <div class="light-buttons">
+                                <button class="light-btn light-on" id="lightOn">
+                                    <i class="fas fa-power-off"></i> Allumer
+                                </button>
+                                <button class="light-btn light-off" id="lightOff">
+                                    <i class="fas fa-power-off"></i> Éteindre
+                                </button>
+                            </div>
+                            <div class="light-bulb" id="lightBulb">
+                                <i class="far fa-lightbulb"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Fonctionnalité 5 : Commande depuis téléphone -->
+                <div class="feature-card dashboard-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Dashboard Mobile</h3>
+                    <p>Contrôlez votre système AgriSmart depuis votre smartphone</p>
+                    <div class="feature-demo">
+                        <div class="mobile-dashboard">
+                            <div class="dashboard-header">
+                                <h4>AgriSmart App</h4>
+                                <div class="battery-indicator">85%</div>
+                            </div>
+                            <div class="dashboard-stats">
+                                <div class="stat">
+                                    <div class="stat-label">Humidité</div>
+                                    <div class="stat-value" id="dashMoisture">65%</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-label">Niveau eau</div>
+                                    <div class="stat-value" id="dashWater">72%</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-label">Température</div>
+                                    <div class="stat-value" id="dashTemp">24°C</div>
+                                </div>
+                            </div>
+                            <div class="dashboard-controls">
+                                <button class="dash-btn" id="dashIrrigation">
+                                    <i class="fas fa-shower"></i> Irrigation
+                                </button>
+                                <button class="dash-btn" id="dashLight">
+                                    <i class="fas fa-lightbulb"></i> Éclairage
+                                </button>
+                            </div>
+                            <div class="dashboard-footer">
+                                <i class="fas fa-sync-alt"></i> Dernière mise à jour: <span id="lastUpdate">maintenant</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Encadreur -->
+    <section id="encadreur" class="supervisor-section">
+        <div class="container">
+            <h2 class="section-title">Encadreur du projet</h2>
+            <div class="supervisor-content">
+                <div class="supervisor-info">
+                    <h3>Ing. Fosting Blaise</h3>
+                    <p>Notre encadreur, Ingénieur Fosting Blaise, apporte une expertise technique précieuse et guide notre équipe vers l'innovation et l'excellence dans le domaine de l'agriculture intelligente.</p>
+                    <p>Avec plus de 10 ans d'expérience dans les technologies agricoles et l'Internet des Objets, il nous aide à concrétiser nos idées et à développer des solutions pratiques pour les agriculteurs.</p>
+                </div>
+                <div class="supervisor-carousel">
+                    <div class="carousel-container">
+                        <div class="carousel-slide" id="carouselSlide">
+                            <!-- Ajoutez vos photos de l'encadreur ici -->
+                            <div class="carousel-item">
+                                <img src="C:\Users\ALANE WILFRID\Desktop\SMARTAGRI\IMG1.jpg" alt="Ing. Fosting Blaise - Photo 1">
+                                <p>Ing. Fosting Blaise - Photo professionnelle</p>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="C:\Users\ALANE WILFRID\Desktop\SMARTAGRI\IMG2.jpg" alt="Ing. Fosting Blaise - Photo 2">
+                                <p>Ing. Fosting Blaise - En formation</p>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="C:\Users\ALANE WILFRID\Desktop\SMARTAGRI\IMG3.jpg" alt="Ing. Fosting Blaise - Photo 3">
+                                <p>Ing. Fosting Blaise - en 2012</p>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="C:\Users\ALANE WILFRID\Desktop\SMARTAGRI\IMG4.jpg" alt="Ing. Fosting Blaise - Photo 4">
+                                <p>Ing. Fosting Blaise - En réunion</p>
+                            </div>
+                        </div>
+                        <button class="carousel-btn carousel-prev" id="carouselPrev">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn carousel-next" id="carouselNext">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <div class="carousel-dots" id="carouselDots">
+                            <!-- Les points seront ajoutés dynamiquement en JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Équipe -->
+    <section id="equipe" class="team-section">
+        <div class="container">
+            <h2 class="section-title">Équipe du projet</h2>
+            <p class="section-subtitle">Découvrez les membres passionnés derrière AgriSmart</p>
+            
+            <div class="team-grid">
+                <!-- Membre 1 -->
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="C:\Users\ALANE WILFRID\Desktop\SMARTAGRI\elvira.jpg" alt="Koagne Elvira">
+                    </div>
+                    <h3>Koagne Elvira</h3>
+                    <p class="member-role">Chef du groupe</p>
+                    <p>Etudiant en Licence IRT </p>
+                </div>
+
+                <!-- Membre 2 -->
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="C:\Users\ALANE WILFRID\Desktop\SMARTAGRI\aimeric.jpg" alt="Nguemboue Aimeric">
+                    </div>
+                    <h3>Nguemboue Aimeric</h3>
+                    <p class="member-role">Membre du groupe</p>
+                    <p>Etudiant en Licence IRT </p>
+                </div>
+
+                <!-- Membre 3 -->
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="C:\Users\ALANE WILFRID\Desktop\SMARTAGRI\sarah.jpg" alt="Youkoudjio Sarah">
+                    </div>
+                    <h3>Youkoudjio Sarah</h3>
+                    <p class="member-role">Membre du groupe</p>
+                    <p>Etudiant en Licence IRT </p>
+                </div>
+
+                <!-- Membre 4 -->
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="C:\Users\ALANE WILFRID\Desktop\SMARTAGRI\alane.jpg" alt="Kamseu Alane">
+                    </div>
+                    <h3>Kamseu Alane</h3>
+                    <p class="member-role">Membre du groupe</p>
+                    <p>Etudiant en Licence IRT </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Remerciements -->
+    <section id="remerciements" class="acknowledgments-section">
+        <div class="container">
+            <h2 class="section-title">Remerciements</h2>
+            <p class="section-subtitle">Nous tenons à exprimer notre gratitude envers les personnes qui ont contribué à la réussite de ce projet</p>
+            
+            <div class="acknowledgments-grid">
+                <!-- Directeur -->
+                <div class="acknowledgment-card">
+                    <div class="acknowledgment-image">
+                        <img src="C:\Users\ALANE WILFRID\Desktop\SMARTAGRI\directeur.jpg" alt="Pr TChinda René - Directeur">
+                    </div>
+                    <h3>Directeur</h3>
+                    <p class="acknowledgment-name">Pr TChinda René</p>
+                    <p class="acknowledgment-description">Pour son leadership et son soutien institutionnel</p>
+                </div>
+
+                <!-- Chef de département -->
+                <div class="acknowledgment-card">
+                    <div class="acknowledgment-image">
+                        <img src="C:\Users\ALANE WILFRID\Desktop\SMARTAGRI\chef.jpg" alt="">
+                    </div>
+                    <h3>Chef de département</h3>
+                    <p class="acknowledgment-name">Pr Kapche François</p>
+                    <p class="acknowledgment-description">Pour sa guidance académique et ses précieux conseils</p>
+                </div>
+
+                <!-- Responsable du niveau 3 -->
+                <div class="acknowledgment-card">
+                    <div class="acknowledgment-image">
+                        <img src="C:\Users\ALANE WILFRID\Desktop\SMARTAGRI\alex.jpg" alt="Dr Chime Alex - Responsable du niveau 3">
+                    </div>
+                    <h3>Responsable du niveau 3</h3>
+                    <p class="acknowledgment-name">Dr Chime Alex</p>
+                    <p class="acknowledgment-description">Pour son encadrement pédagogique et son accompagnement</p>
+                </div>
+
+                <!-- Délégués de classe -->
+                <div class="acknowledgment-card">
+                    <div class="acknowledgment-image">
+                        <img src="C:\Users\ALANE WILFRID\Desktop\SMARTAGRI\delegue1.jpg" alt="Ngana Wilfried et Maba Christian - Délégués de classe">
+                    </div>
+                    <h3>Délégués de classe</h3>
+                    <p class="acknowledgment-name">Ngana Wilfried</p>
+                    <p class="acknowledgment-description">Pour leur coordination et représentation efficace</p>
+                </div>
+                <div class="acknowledgment-card">
+                    <div class="acknowledgment-image">
+                        <img src="C:\Users\ALANE WILFRID\Desktop\SMARTAGRI\delegue2.jpg" alt="Ngana Wilfried et Maba Christian - Délégués de classe">
+                    </div>
+                    <h3>Délégués de classe</h3>
+                    <p class="acknowledgment-name">Maba Christian</p>
+                    <p class="acknowledgment-description">Pour leur coordination et représentation efficace</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Contactez-nous</h2>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Informations de contact</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Localisation</h4>
+                            <p>Bandjoun – IUT FV</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Téléphone</h4>
+                            <p>+237 697 731 595</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <p>agrismart@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Disponibilité</h4>
+                            <p>Lundi - Vendredi: 8h00 - 17h00</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Envoyez-nous un message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nom complet</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Adresse email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Votre message</label>
+                            <textarea id="message" rows="5" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn submit-btn">
+                            <i class="fas fa-paper-plane"></i> Envoyer le message
+                        </button>
+                        
+                        <div class="form-message" id="formMessage"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="#" class="logo">Agri<span>Smart</span></a>
+                    <p>Agriculture Intelligente pour un avenir durable</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Liens rapides</h4>
+                    <ul>
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#apropos">À propos</a></li>
+                        <li><a href="#fonctionnalites">Fonctionnalités</a></li>
+                        <li><a href="#equipe">Équipe</a></li>
+                        <li><a href="#remerciements">Remerciements</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>Suivez-nous</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 AgriSmart. Tous droits réservés. | Projet d'agriculture intelligente</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
